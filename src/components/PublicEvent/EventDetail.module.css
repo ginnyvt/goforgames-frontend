@@ -1,0 +1,108 @@
+.event__section {
+  min-height: 100vh;
+  background: #f7f7f7;
+  padding: 2rem 1rem !important;
+}
+
+.event__section__center {
+  margin: 2rem auto 2rem auto;
+}
+
+.event__details {
+  position: relative;
+  box-shadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.sed__background {
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.date__box {
+  position: absolute;
+  display: flex;
+  right: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(26, 23, 23);
+  border: 2px solid;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.date__day {
+  font-size: 22px;
+}
+
+.date__month {
+  text-transform: uppercase;
+}
+
+.sed__header {
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+
+.event__location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event__location span {
+  font-style: italic;
+  font-size: smaller;
+  color: rgb(31, 139, 175);
+}
+
+.sed__info {
+  background: white;
+  padding: 10px 20px 40px;
+}
+
+.sed__info p {
+  line-height: 1.1;
+}
+
+.event__icon {
+  margin-right: 0.5rem;
+}
+
+.btn__group {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login span {
+  cursor: pointer;
+  color: lightseagreen;
+}
+
+.login span:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .event__section {
+    padding: 3rem 6rem !important;
+  }
+
+  .sed__header {
+    padding: 20px 40px;
+  }
+
+  .date__box {
+    right: 35px;
+  }
+
+  .sed__info {
+    padding: 10px 40px 40px;
+  }
+}

@@ -1,0 +1,161 @@
+.event_card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2%;
+  background: #fff;
+  line-height: 1.4;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.event_card a {
+  color: inherit;
+}
+
+.event_card a:hover {
+  color: #5ad67d;
+}
+
+.event_card:hover .event_img {
+  transform: scale(1.3) rotate(3deg);
+}
+
+.event_meta {
+  position: relative;
+  z-index: 0;
+  height: 200px;
+}
+
+.event_img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s;
+}
+
+.event_details {
+  margin: auto;
+  padding: 0;
+  list-style: none;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  margin: auto;
+  transition: left 0.2s;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.event_details .event_creator::before {
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 10px;
+  content: '\f007';
+}
+
+.event_details .event_date::before {
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 10px;
+  content: '\f133';
+}
+
+.event_details .event_time::before {
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 10px;
+  content: '\f017';
+}
+
+.event_card:hover .event_details {
+  left: 0%;
+}
+
+.event_info {
+  padding: 1rem;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.event_title {
+  line-height: 1;
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.event_subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #a2a2a2;
+  margin-top: 5px;
+}
+
+.attend {
+  text-align: right;
+}
+
+.event_card p {
+  position: relative;
+  margin: 1rem 0 0;
+}
+
+.event_desc {
+  margin-top: 1.25rem;
+}
+
+.event_desc span {
+  font-style: italic;
+}
+
+.event_desc::before {
+  content: '';
+  position: absolute;
+  height: 5px;
+  background: #20c997;
+  width: 35px;
+  top: -0.75rem;
+  border-radius: 3px;
+}
+
+.btn-attend {
+  background: #17a2b8;
+  color: white;
+}
+@media screen and (min-width: 640px) {
+  .event_card {
+    flex-direction: row;
+    max-width: 700px;
+  }
+
+  .event_meta {
+    flex-basis: 40%;
+    height: auto;
+  }
+
+  .event_info {
+    flex-basis: 60%;
+  }
+
+  .event_info::before {
+    transform: skewX(-3deg);
+    content: '';
+    background: #fff;
+    width: 30px;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+}

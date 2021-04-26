@@ -1,0 +1,17 @@
+.events_list {
+  background: #f6f7f8;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 2px;
+  color: #17a2b8;
+}
+
+@media screen and (min-width: 700px) {
+  .nav_tabs {
+    background: #dee5ec;
+  }
+}

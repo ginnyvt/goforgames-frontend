@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  box-sizing: border-box;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section_center {
+  width: 90vw;
+  margin: 2rem auto 2rem auto;
+  max-width: 1200px;
+}
