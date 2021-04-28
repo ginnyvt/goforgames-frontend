@@ -6,7 +6,7 @@ import axios from 'axios';
 import EventContext from '../../context/event-context';
 
 import './SingleEvent.css';
-import eventImg from '../../images/image-1.jpg';
+import eventImg from '../../images/tour-1.jpeg';
 
 const SingleEvent = ({ singleEvent }) => {
   const [creator, setCreator] = useState('');
@@ -36,7 +36,7 @@ const SingleEvent = ({ singleEvent }) => {
   };
 
   return (
-    <article className='event_card'>
+    <article className='event_card mt-5'>
       <div className='event_meta'>
         <div className='event_img' style={bgStyle}></div>
         <ul className='event_details'>
@@ -54,11 +54,12 @@ const SingleEvent = ({ singleEvent }) => {
         <h1 className='event_title'>{singleEvent.title}</h1>
         <h2 className='event_subtitle'>Location: {singleEvent.address}</h2>
         <p className='event_desc'>
-          <span>Description:</span> {singleEvent.description || 'N/G'}
+          <span>Description:</span>{' '}
+          {singleEvent.description || `Let's have fun time together!`}
         </p>
         <p className='attend'>
           <Link to={`/events/${singleEvent._id}`}>
-            <button className='btn btn-attend'>Attend</button>
+            <button className='btn btn-success'>Attend</button>
           </Link>
         </p>
       </div>

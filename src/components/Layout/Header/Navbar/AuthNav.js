@@ -6,14 +6,9 @@ import { useAuth0 } from '@auth0/auth0-react';
 import SignupBtn from '../../../Auth/SignupBtn';
 import LoginBtn from '../../../Auth/LoginBtn';
 import LogoutBtn from '../../../Auth/LogoutBtn';
-// import Spinner from '../../../Spinner/Spinner';
 
 const AuthNav = () => {
   const { isAuthenticated } = useAuth0();
-
-  // if (isLoading) {
-  //   return <Spinner />;
-  // }
 
   return (
     <Nav>
@@ -31,12 +26,12 @@ const AuthNav = () => {
             <Nav.Link>Dashboard</Nav.Link>
           </LinkContainer>
 
-          <LogoutBtn>Logout</LogoutBtn>
+          <LogoutBtn className='btn-success'>Logout</LogoutBtn>
         </>
       ) : (
         <>
-          <SignupBtn className='btn-info mr-2'>Sign Up</SignupBtn>
-          <LoginBtn className='btn-warning'>Login</LoginBtn>
+          <SignupBtn className='btn-info mr-2 mt-2 mb-1'>Sign Up</SignupBtn>
+          <LoginBtn className='btn-warning mr-2 mt-2 mb-1'>Login</LoginBtn>
         </>
       )}
     </Nav>

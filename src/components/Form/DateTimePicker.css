@@ -1,0 +1,8 @@
+.datetime-picker {
+  width: 100% !important;
+  display: block;
+}
+
+.form-group label {
+  display: block;
+}

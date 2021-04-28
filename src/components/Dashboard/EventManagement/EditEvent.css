@@ -1,0 +1,16 @@
+.edit-event-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-event-wrapper form {
+  width: 600px;
+}
+
+.edit-buttons {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

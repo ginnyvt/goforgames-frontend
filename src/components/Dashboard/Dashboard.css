@@ -1,0 +1,18 @@
+.section_dashboard {
+  min-height: 100vh;
+  /* background-color: burlywood; */
+  margin: 1rem auto;
+}
+
+/* .dashboard {
+  background-color: rgb(229, 226, 231);
+} */
+
+.profile-container {
+  background-color: rgb(238, 243, 243);
+}
+
+.myevents-container {
+  /* background-color: rgb(238, 243, 243); */
+  margin-top: 5rem;
+}

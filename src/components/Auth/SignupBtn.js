@@ -11,7 +11,7 @@ const SignupBtn = (props) => {
       onClick={() =>
         loginWithRedirect({
           screen_hint: 'signup',
-          redirectUri: 'http://localhost:3000/my-profile',
+          redirectUri: 'http://localhost:3000/users/dashboard',
         })
       }
     >

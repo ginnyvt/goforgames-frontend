@@ -127,11 +127,12 @@
   top: -0.75rem;
   border-radius: 3px;
 }
-
+/* 
 .btn-attend {
-  background: #17a2b8;
+  background: #20c997;
   color: white;
-}
+} */
+
 @media screen and (min-width: 640px) {
   .event_card {
     flex-direction: row;

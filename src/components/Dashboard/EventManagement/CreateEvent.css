@@ -1,0 +1,31 @@
+.new-event {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.btn-group {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-event-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  /* padding: 2rem 0rem; */
+}
+
+.new-event-form {
+  min-height: 50vh;
+}
+
+@media screen and (min-width: 600px) {
+  .new-event-form {
+    min-width: 600px;
+    padding: 3rem 2rem;
+  }
+}

@@ -6,6 +6,7 @@ const LogoutBtn = (props) => {
   const { logout } = useAuth0();
   return (
     <Button
+      className={`btn ${props.className}`}
       onClick={() =>
         logout({
           returnTo: window.location.origin,

@@ -1,0 +1,35 @@
+.profile-img {
+  border-radius: 50%;
+}
+
+.my-profile {
+  padding: 2rem;
+}
+
+.profile-img-container img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.profile-header h3 {
+  display: none;
+  font-family: 'Pacifico', cursive;
+  /* color: #18bc9c; */
+}
+
+@media screen and (min-width: 450px) {
+  .submit-btn-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .profile-header h3 {
+    display: block;
+    margin-bottom: 3rem;
+    font-size: 2.6rem;
+  }
+}
