@@ -15,7 +15,7 @@ const MainNav = () => {
       <Container>
         {/* Logo */}
         <LinkContainer to='/'>
-          <Navbar.Brand className='logo'>Let's Meet</Navbar.Brand>
+          <Navbar.Brand className='logo'>Go for games</Navbar.Brand>
         </LinkContainer>
 
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />

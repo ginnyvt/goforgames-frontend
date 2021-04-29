@@ -24,7 +24,7 @@ const MyEvents = () => {
             <HostedEvents getToken={getAccessTokenSilently} keyTab={key} />
           </Tab>
           <Tab eventKey='member' title='Member'>
-            <p>Joined events</p>
+            <h4 className='p-5'>Coming soon...</h4>
           </Tab>
         </Tabs>
       </div>

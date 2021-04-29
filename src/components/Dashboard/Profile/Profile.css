@@ -16,7 +16,7 @@
 .profile-header h3 {
   display: none;
   font-family: 'Pacifico', cursive;
-  /* color: #18bc9c; */
+  color: #80a1a1;
 }
 
 @media screen and (min-width: 450px) {

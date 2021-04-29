@@ -14,7 +14,6 @@ import ParticipantsList from './ParticipantsList';
 import eventImg from '../../../../../images/tour-1.jpeg';
 
 const HostedEvent = ({ hostedEvent }) => {
-  console.log(hostedEvent);
   const history = useHistory();
   const { getAccessTokenSilently } = useAuth0();
 
@@ -142,7 +141,9 @@ const HostedEvent = ({ hostedEvent }) => {
         <Card.Text>
           {hostedEvent.description || `Let's have fun time together!`} <br />
           <small>
-            <button onClick={showListParticipants}>Manage</button>
+            <Button variant='link' onClick={showListParticipants}>
+              Manage
+            </Button>
           </small>
           {showList && (
             <ParticipantsList

@@ -8,6 +8,7 @@ import Spinner from '../../../../Spinner/Spinner';
 
 const ParticipantsList = (props) => {
   const [participantsList, setParticipantsList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getList = async () => {
@@ -16,10 +17,26 @@ const ParticipantsList = (props) => {
           method: 'GET',
           url: `http://localhost:5000/participants/list/${props.eventId}`,
         });
-        const participants = data.results.map((p) => {
+        const participantsId = data.results.map((p) => {
           return p.userId;
         });
+
+        const participants = await Promise.all(
+          participantsId.map(async (pId) => {
+            try {
+              const { data } = await axios({
+                method: 'GET',
+                url: `http://localhost:5000/users/${pId}`,
+              });
+              return `${data.results.name} - ${data.results.email}`;
+            } catch (err) {
+              console.log(err.response);
+            }
+          })
+        );
+
         setParticipantsList(participants);
+        setLoading(false);
       } catch (err) {
         console.log(err.response);
       }
@@ -39,11 +56,15 @@ const ParticipantsList = (props) => {
         <Modal.Title id='participants-list'>List of participants</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <ul>
-          {participantsList.map((p) => {
-            return <li>{p}</li>;
-          })}
-        </ul>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <ul>
+            {participantsList.map((p) => {
+              return <li>{p}</li>;
+            })}
+          </ul>
+        )}
       </Modal.Body>
       <Modal.Footer>
         <Button variant='secondary' onClick={props.closeModal}>
