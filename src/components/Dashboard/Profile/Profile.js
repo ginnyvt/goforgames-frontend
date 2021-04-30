@@ -6,6 +6,7 @@ import axios from 'axios';
 import UpdateProfileModal from './UpdateProfileModal';
 
 const Profile = () => {
+  const server_url = process.env.REACT_APP_SERVER_URL;
   const { user, getAccessTokenSilently } = useAuth0();
   const { picture } = user;
 
@@ -38,7 +39,7 @@ const Profile = () => {
     try {
       const { data } = await axios({
         method: 'PATCH',
-        url: 'http://localhost:5000/users/',
+        url: `${server_url}/users`,
         headers: {
           Authorization: `Bearer ${token}`,
         },

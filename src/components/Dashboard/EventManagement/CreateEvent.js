@@ -14,6 +14,8 @@ import CreateEventModal from './CreateEventModal/CreateEventModal';
 import './CreateEvent.css';
 
 const CreateEvent = () => {
+  const server_url = process.env.REACT_APP_SERVER_URL;
+
   const myForm = useForm();
   const { getAccessTokenSilently } = useAuth0();
 
@@ -78,7 +80,7 @@ const CreateEvent = () => {
     try {
       const { data } = await axios({
         method: 'POST',
-        url: 'http://localhost:5000/events',
+        url: `${server_url}/events`,
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -3,6 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Button } from 'react-bootstrap';
 
 const SignupBtn = (props) => {
+  const client_url = process.env.REACT_APP_CLIENT_URL;
   const { loginWithRedirect } = useAuth0();
 
   return (
@@ -11,7 +12,7 @@ const SignupBtn = (props) => {
       onClick={() =>
         loginWithRedirect({
           screen_hint: 'signup',
-          redirectUri: 'http://localhost:3000/users/dashboard',
+          redirectUri: `${client_url}/users/dashboard`,
         })
       }
     >

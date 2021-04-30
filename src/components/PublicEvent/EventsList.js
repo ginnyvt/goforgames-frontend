@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useAuth0 } from '@auth0/auth0-react';
 import SingleEvent from './SingleEvent';
 
 import './EventsList.module.css';
 
+import Spinner from '../Spinner/Spinner';
+
 const EventsList = ({ keyTab }) => {
-  // const { getAccessTokenSilently } = useAuth0();
-  // getAccessTokenSilently().then((res) => {
-  //   console.log(res);
-  // });
+  const server_url = process.env.REACT_APP_SERVER_URL;
 
   const [eventsList, setEventsList] = useState([]);
   const [noEvents, setNoEvents] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const { data } = await axios({
           method: 'GET',
-          url: 'http://localhost:5000/events',
+          url: `${server_url}/events`,
           params: {
             type: keyTab,
           },
@@ -28,6 +27,7 @@ const EventsList = ({ keyTab }) => {
           setNoEvents(true);
         }
         setEventsList(data.results);
+        setLoading(false);
       } catch (err) {
         console.log(err);
       }
@@ -38,11 +38,16 @@ const EventsList = ({ keyTab }) => {
 
   return (
     <>
-      <div className='events_list'>
-        {eventsList.map((singE) => {
-          return <SingleEvent key={singE._id} singleEvent={singE} />;
-        })}
-      </div>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className='events_list'>
+          {eventsList.map((singE) => {
+            return <SingleEvent key={singE._id} singleEvent={singE} />;
+          })}
+        </div>
+      )}
+
       <div>{noEvents ? <p>No upcoming events</p> : null}</div>
     </>
   );

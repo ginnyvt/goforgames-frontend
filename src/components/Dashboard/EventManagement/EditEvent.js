@@ -16,6 +16,7 @@ import Button from 'react-bootstrap/Button';
 import './EditEvent.css';
 
 const EditEvent = () => {
+  const server_url = process.env.REACT_APP_SERVER_URL;
   const { getAccessTokenSilently } = useAuth0();
   const { eventId } = useParams();
 
@@ -84,9 +85,7 @@ const EditEvent = () => {
 
   useEffect(() => {
     const getEvent = async () => {
-      const { data } = await axios.get(
-        `http://localhost:5000/events/${eventId}`
-      );
+      const { data } = await axios.get(`${server_url}/events/${eventId}`);
       const e = data.results;
       if (checkEditTime(e.startTime)) {
         setReadonly(true);
@@ -128,7 +127,7 @@ const EditEvent = () => {
     try {
       const { data } = await axios({
         method: 'PATCH',
-        url: `http://localhost:5000/events/${eventId}`,
+        url: `${server_url}/events/${eventId}`,
         headers: {
           Authorization: `Bearer ${token}`,
         },

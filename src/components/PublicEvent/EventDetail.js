@@ -9,11 +9,14 @@ import Spinner from '../Spinner/Spinner';
 
 import EventContext from '../../context/event-context';
 
-import eventImg from '../../images/tour-1.jpeg';
+import eventImg from '../../images/badminton.jpg';
 import styles from './EventDetail.module.css';
 
 const EventDetail = () => {
   // const { eventObj: singleEvent } = useContext(EventContext);
+
+  const server_url = process.env.REACT_APP_SERVER_URL;
+
   const {
     isAuthenticated,
     loginWithRedirect,
@@ -29,10 +32,8 @@ const EventDetail = () => {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const { data } = await axios.get(
-          `http://localhost:5000/events/${eventId}`
-        );
-        console.log(data);
+        const { data } = await axios.get(`${server_url}/events/${eventId}`);
+
         setSingleEvent(data.results);
         setImgUrl(data.results.imgUrl || '');
       } catch (err) {

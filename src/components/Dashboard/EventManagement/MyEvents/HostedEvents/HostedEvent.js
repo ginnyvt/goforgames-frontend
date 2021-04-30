@@ -14,6 +14,7 @@ import ParticipantsList from './ParticipantsList';
 import eventImg from '../../../../../images/tour-1.jpeg';
 
 const HostedEvent = ({ hostedEvent }) => {
+  const server_url = process.env.REACT_APP_SERVER_URL;
   const history = useHistory();
   const { getAccessTokenSilently } = useAuth0();
 
@@ -45,7 +46,7 @@ const HostedEvent = ({ hostedEvent }) => {
     try {
       const { data } = await axios({
         method: 'PATCH',
-        url: `http://localhost:5000/events/${hostedEvent._id}`,
+        url: `${server_url}/events/${hostedEvent._id}`,
         headers: {
           Authorization: `Bearer ${token}`,
         },

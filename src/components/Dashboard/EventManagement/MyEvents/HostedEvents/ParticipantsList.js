@@ -7,15 +7,17 @@ import Button from 'react-bootstrap/Button';
 import Spinner from '../../../../Spinner/Spinner';
 
 const ParticipantsList = (props) => {
+  const server_url = process.env.REACT_APP_SERVER_URL;
   const [participantsList, setParticipantsList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [noParticipants, setNoParticipants] = useState(false);
 
   useEffect(() => {
     const getList = async () => {
       try {
         const { data } = await axios({
           method: 'GET',
-          url: `http://localhost:5000/participants/list/${props.eventId}`,
+          url: `${server_url}/participants/list/${props.eventId}`,
         });
         const participantsId = data.results.map((p) => {
           return p.userId;
@@ -26,7 +28,7 @@ const ParticipantsList = (props) => {
             try {
               const { data } = await axios({
                 method: 'GET',
-                url: `http://localhost:5000/users/${pId}`,
+                url: `${server_url}/users/${pId}`,
               });
               return `${data.results.name} - ${data.results.email}`;
             } catch (err) {
@@ -34,6 +36,10 @@ const ParticipantsList = (props) => {
             }
           })
         );
+
+        if (participants.length === 0) {
+          setNoParticipants(true);
+        }
 
         setParticipantsList(participants);
         setLoading(false);
@@ -43,6 +49,20 @@ const ParticipantsList = (props) => {
     };
     getList();
   }, []);
+
+  const renderParticipantsList = () => {
+    if (noParticipants) {
+      return <p>No participants...</p>;
+    } else {
+      return (
+        <ul>
+          {participantsList.map((p) => {
+            return <li>{p}</li>;
+          })}
+        </ul>
+      );
+    }
+  };
 
   return (
     <Modal
@@ -56,15 +76,7 @@ const ParticipantsList = (props) => {
         <Modal.Title id='participants-list'>List of participants</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {loading ? (
-          <Spinner />
-        ) : (
-          <ul>
-            {participantsList.map((p) => {
-              return <li>{p}</li>;
-            })}
-          </ul>
-        )}
+        {loading ? <Spinner /> : renderParticipantsList()}
       </Modal.Body>
       <Modal.Footer>
         <Button variant='secondary' onClick={props.closeModal}>

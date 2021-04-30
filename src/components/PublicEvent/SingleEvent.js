@@ -6,9 +6,11 @@ import axios from 'axios';
 import EventContext from '../../context/event-context';
 
 import './SingleEvent.css';
-import eventImg from '../../images/tour-1.jpeg';
+import eventImg from '../../images/badminton.jpg';
 
 const SingleEvent = ({ singleEvent }) => {
+  const server_url = process.env.REACT_APP_SERVER_URL;
+
   const [creator, setCreator] = useState('');
   const ctx = useContext(EventContext);
 
@@ -17,11 +19,14 @@ const SingleEvent = ({ singleEvent }) => {
       try {
         const { data } = await axios({
           method: 'GET',
-          url: `http://localhost:5000/events/${singleEvent._id}`,
+          url: `${server_url}/events/${singleEvent._id}`,
         });
         // console.log(data);
         ctx.onFetchEvent(data.results);
-        setCreator(data.results.creator.name);
+        const creatorInfo =
+          `${data.results.creator.given_name} ${data.results.creator.family_name}` ||
+          data.results.creator.name;
+        setCreator(creatorInfo);
       } catch (err) {
         console.log(err);
       }

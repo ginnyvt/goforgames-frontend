@@ -4,6 +4,8 @@ import axios from 'axios';
 import SubscriptionModal from './SubscriptionModal';
 
 const Footer = () => {
+  const server_url = process.env.REACT_APP_SERVER_URL;
+
   const [email, setEmail] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState('');
@@ -15,6 +17,7 @@ const Footer = () => {
   const closeModalHandler = () => {
     setShowModal(false);
     setMessage('');
+    setEmail('');
   };
 
   const submitHandler = async (e) => {
@@ -23,7 +26,7 @@ const Footer = () => {
     try {
       const { data } = await axios({
         method: 'POST',
-        url: 'http://localhost:5000/subscribers',
+        url: `${server_url}/subscribers`,
         data: { email: email },
       });
 
