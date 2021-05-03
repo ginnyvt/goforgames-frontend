@@ -23,7 +23,7 @@ const EventsList = ({ keyTab }) => {
             type: keyTab,
           },
         });
-        if (data.results.length === 0) {
+        if (data.results.length === 0 && keyTab === 'upcoming') {
           setNoEvents(true);
         }
         setEventsList(data.results);
