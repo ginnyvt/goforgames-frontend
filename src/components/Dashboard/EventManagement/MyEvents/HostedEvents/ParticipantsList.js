@@ -30,7 +30,9 @@ const ParticipantsList = (props) => {
                 method: 'GET',
                 url: `${server_url}/users/${pId}`,
               });
-              return `${data.results.name} - ${data.results.email}`;
+
+              const participantInfo = `${data.results.given_name} ${data.results.family_name}`;
+              return `${participantInfo} - ${data.results.email}`;
             } catch (err) {
               console.log(err.response);
             }
