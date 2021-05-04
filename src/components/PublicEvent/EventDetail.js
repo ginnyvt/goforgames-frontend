@@ -7,7 +7,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import RegistrationModal from './RegistrationModal/RegistrationModal';
 import Spinner from '../Spinner/Spinner';
 
-import EventContext from '../../context/event-context';
+// import EventContext from '../../context/event-context';
 
 import eventImg from '../../images/badminton.jpg';
 import styles from './EventDetail.module.css';
@@ -48,7 +48,7 @@ const EventDetail = () => {
     const fetchCountParticipants = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/participants/count/${eventId}`
+          `${server_url}/participants/count/${eventId}`
         );
         setNumParticipants(data.results);
       } catch (err) {
@@ -74,7 +74,7 @@ const EventDetail = () => {
     try {
       const { data } = await axios({
         method: 'POST',
-        url: `http://localhost:5000/participants/${singleEvent._id}`,
+        url: `${server_url}/participants/${singleEvent._id}`,
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -91,7 +91,7 @@ const EventDetail = () => {
     try {
       const { data } = await axios({
         method: 'PATCH',
-        url: `http://localhost:5000/participants/${eventId}`,
+        url: `${server_url}/participants/${eventId}`,
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -190,7 +190,9 @@ const EventDetail = () => {
                     <span className={styles.event__icon}>
                       <i className='far fa-user'></i>
                     </span>
-                    Hosted: {singleEvent.creator.name}
+                    Hosted:{' '}
+                    {`${singleEvent.creator.given_name} ${singleEvent.creator.family_name}` ||
+                      singleEvent.creator.name}
                   </p>
                   <p>
                     <span className={styles.event__icon}>

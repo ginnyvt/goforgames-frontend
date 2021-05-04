@@ -149,8 +149,8 @@ const EditEvent = () => {
           Edit Event
         </h3>
       </div>
-      <div className='edit-event-wrapper'>
-        <div>
+      <div className='row edit-event-wrapper'>
+        <div className='col-lg-12'>
           <form onSubmit={submitHandler}>
             <SimpleInputField
               label='Title'
