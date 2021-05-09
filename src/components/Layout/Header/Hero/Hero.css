@@ -8,7 +8,7 @@
       rgba(218, 213, 213, 0.2),
       rgba(100, 100, 100, 0.1)
     ),
-    url('../../../../images/hero-img.jpg') center/cover no-repeat;
+    url('../../../../images/games-banner.jpg') center/cover no-repeat;
 }
 
 .hero_banner {
@@ -25,6 +25,7 @@
   margin: 0 auto;
   margin-bottom: 2rem;
   color: rgb(205, 241, 241);
+  font-weight: 900;
 }
 
 @media screen and (min-width: 800px) {

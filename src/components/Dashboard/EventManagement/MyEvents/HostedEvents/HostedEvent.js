@@ -11,7 +11,7 @@ import Modal from 'react-bootstrap/Modal';
 import Spinner from '../../../../Spinner/Spinner';
 import ParticipantsList from './ParticipantsList';
 
-import eventImg from '../../../../../images/tour-1.jpeg';
+import eventImg from '../../../../../images/badminton.jpg';
 
 const HostedEvent = ({ hostedEvent }) => {
   const server_url = process.env.REACT_APP_SERVER_URL;

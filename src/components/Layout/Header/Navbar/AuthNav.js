@@ -31,7 +31,7 @@ const AuthNav = () => {
       ) : (
         <>
           <SignupBtn className='btn-info mr-2 mt-2 mb-1'>Sign Up</SignupBtn>
-          <LoginBtn className='btn-warning mr-2 mt-2 mb-1'>Login</LoginBtn>
+          <LoginBtn className='btn-info mr-2 mt-2 mb-1'>Login</LoginBtn>
         </>
       )}
     </Nav>

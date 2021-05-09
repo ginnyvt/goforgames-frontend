@@ -6,12 +6,12 @@ const Hero = () => {
   return (
     <div className='hero'>
       <div className='hero_banner'>
-        <h2 className='hero_title'>Exploring...</h2>
-        <p className='hero_text'>
-          A place to meet people, try new game, or practice more of what you are
-          enthusiastic.
-        </p>
-        <Button className='btn-warning'>Get started</Button>
+        {/* <h2 className='hero_title'>Exploring...</h2> */}
+        <h4 className='hero_text'>
+          A place to meet new people, try new games, or play more of what you
+          love.
+        </h4>
+        {/* <Button className='btn-warning'>Get started</Button> */}
       </div>
     </div>
   );
