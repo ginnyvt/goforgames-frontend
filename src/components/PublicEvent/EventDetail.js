@@ -104,6 +104,16 @@ const EventDetail = () => {
 
   const renderButtons = () => {
     const current = dayjs().format();
+    if (current > singleEvent.startTime) {
+      return (
+        <div>
+          <button className='btn' disabled='true'>
+            Past Event
+          </button>
+        </div>
+      );
+    }
+
     if (!isAuthenticated) {
       return (
         <div>
@@ -111,16 +121,6 @@ const EventDetail = () => {
             Please
             <span onClick={() => loginWithRedirect()}> login</span> to register!
           </p>
-        </div>
-      );
-    }
-
-    if (current > singleEvent.startTime) {
-      return (
-        <div>
-          <button className='btn' disabled='true'>
-            Past Event
-          </button>
         </div>
       );
     } else if (singleEvent.status === 'cancelled') {
