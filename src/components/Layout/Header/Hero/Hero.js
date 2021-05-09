@@ -7,10 +7,10 @@ const Hero = () => {
     <div className='hero'>
       <div className='hero_banner'>
         {/* <h2 className='hero_title'>Exploring...</h2> */}
-        <h4 className='hero_text'>
+        <h3 className='hero_text'>
           A place to meet new people, try new games, or play more of what you
           love.
-        </h4>
+        </h3>
         {/* <Button className='btn-warning'>Get started</Button> */}
       </div>
     </div>

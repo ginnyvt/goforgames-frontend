@@ -3,11 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-      to right,
-      rgba(218, 213, 213, 0.2),
-      rgba(100, 100, 100, 0.1)
-    ),
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('../../../../images/games-banner.jpg') center/cover no-repeat;
 }
 
@@ -24,7 +20,7 @@
   width: 85%;
   margin: 0 auto;
   margin-bottom: 2rem;
-  color: rgb(205, 241, 241);
+  color: rgb(185, 248, 248);
   font-weight: 900;
 }
 
