@@ -7,7 +7,7 @@ import AuthNav from './AuthNav';
 
 import './MainNav.css';
 import { Nav } from 'react-bootstrap';
-import { logo } from '../../../../images/mylogo.png';
+import logo from '../../../../images/mylogo.png';
 
 const MainNav = () => {
   return (
