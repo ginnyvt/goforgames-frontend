@@ -26,12 +26,12 @@ const AuthNav = () => {
             <Nav.Link>Dashboard</Nav.Link>
           </LinkContainer>
 
-          <LogoutBtn className='btn-info'>Logout</LogoutBtn>
+          <LogoutBtn className='btn-success'>Logout</LogoutBtn>
         </>
       ) : (
         <>
           <SignupBtn className='btn-info mr-2 mt-2 mb-1'>Sign Up</SignupBtn>
-          <LoginBtn className='btn-info mr-2 mt-2 mb-1'>Login</LoginBtn>
+          <LoginBtn className='btn-success mr-2 mt-2 mb-1'>Login</LoginBtn>
         </>
       )}
     </Nav>

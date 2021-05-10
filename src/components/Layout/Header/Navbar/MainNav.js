@@ -7,7 +7,7 @@ import AuthNav from './AuthNav';
 
 import './MainNav.css';
 import { Nav } from 'react-bootstrap';
-// import logo from '../../../images/logo-192x192.png';
+import { logo } from '../../../../images/mylogo.png';
 
 const MainNav = () => {
   return (
@@ -15,7 +15,9 @@ const MainNav = () => {
       <Container>
         {/* Logo */}
         <LinkContainer to='/'>
-          <Navbar.Brand className='logo'>Go for games</Navbar.Brand>
+          <Navbar.Brand className='logo'>
+            <img src={logo} alt='GoforGames logo' heigh='50' />
+          </Navbar.Brand>
         </LinkContainer>
 
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
