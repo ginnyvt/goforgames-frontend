@@ -16,7 +16,7 @@ const MainNav = () => {
         {/* Logo */}
         <LinkContainer to='/'>
           <Navbar.Brand className='logo'>
-            <img src={logo} alt='GoforGames logo' heigh='50' />
+            <img src={logo} alt='GoforGames logo' height='50' />
           </Navbar.Brand>
         </LinkContainer>
 
